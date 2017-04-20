@@ -10,7 +10,7 @@ parameters:
 
 framework:
     #esi: ~
-    #translator: { fallbacks: ['%locale%'] }
+    translator: { fallbacks: ['%locale%'] }
     secret: '%secret%'
     router:
         resource: '%kernel.root_dir%/config/routing.yml'
@@ -38,11 +38,18 @@ framework:
 twig:
     debug: '%kernel.debug%'
     strict_variables: '%kernel.debug%'
+    form_themes:
+        - 'SonataCoreBundle:Form:datepicker.html.twig'
+        - 'SonataCoreBundle:Form:colorpicker.html.twig'
+        - 'BlastCoreBundle:Admin/Form:fields.html.twig'
+        - 'BlastUtilsBundle:Form:fields.html.twig'
+        - 'BlastBaseEntitiesBundle:Form:fields.html.twig'
+        - 'LibrinfoMediaBundle:Form:fields.html.twig'
 
 # Doctrine Configuration
 doctrine:
     dbal:
-        driver: pdo_mysql
+        driver: pdo_pgsql
         host: '%database_host%'
         port: '%database_port%'
         dbname: '%database_name%'
@@ -63,8 +70,43 @@ doctrine:
 
 # Swiftmailer Configuration
 swiftmailer:
-    transport: '%mailer_transport%'
-    host: '%mailer_host%'
-    username: '%mailer_user%'
-    password: '%mailer_password%'
-    spool: { type: memory }
+    default_mailer: direct_mailer
+    mailers:
+        direct_mailer:
+            transport: "%mailer_transport%"
+            host:      "%mailer_host%"
+            username:  "%mailer_user%"
+            password:  "%mailer_password%"
+        spool_mailer:
+            transport: "%mailer_transport%"
+            host:      "%mailer_host%"
+            username:  "%mailer_user%"
+            password:  "%mailer_password%"
+            spool: { type: db }
+
+# Sonata
+sonata_block:
+    default_contexts: [cms]
+    blocks:
+        # Enable the SonataAdminBundle block
+        sonata.admin.block.admin_list:
+            contexts:   [admin]
+        # Your other blocks
+
+blast_base_entities:
+    orm:
+        default:
+            naming: true
+            guidable: true
+            timestampable: true
+            addressable: true
+            treeable: false
+            nested_treeable: true
+            nameable: true
+            labelable: true
+            emailable: true
+            descriptible: true
+            searchable: true
+            loggable: true
+            sortable: true
+            normalize: true
