@@ -14,3 +14,7 @@ _sonata_admin:
 blast_core:
     resource: "@BlastCoreBundle/Resources/config/routing.yml" 
     prefix:   /admin
+
+email:
+    resource: "@LibrinfoEmailBundle/Resources/config/routing.yml"
+    prefix: /admin

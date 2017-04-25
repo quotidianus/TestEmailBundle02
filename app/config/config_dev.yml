@@ -32,3 +32,20 @@ monolog:
 
 #swiftmailer:
 #    delivery_addresses: ['me@example.com']
+
+swiftmailer:
+    default_mailer: direct_mailer
+    mailers:
+        direct_mailer:
+            transport: "%mailer_transport%"
+            host:      "%mailer_host%"
+            port:      "%mailer_port%"
+            username:  "%mailer_user%"
+            password:  "%mailer_password%"
+        spool_mailer:
+            transport: "%mailer_transport%"
+            host:      "%mailer_host%"
+            port:      "%mailer_port%"
+            username:  "%mailer_user%"
+            password:  "%mailer_password%"
+            spool: { type: db }
