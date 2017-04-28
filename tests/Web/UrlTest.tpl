@@ -1,6 +1,6 @@
 <?php
 
-namespace {NameSpace}\Tests\Web;
+namespace Librinfo\EmailBundle\Tests\Web;
 
 use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
 
@@ -20,17 +20,19 @@ class UrlTest extends WebTestCase
     public function urlProvider()
     {
         return array(
-            array('/'),
-            array('/admin/dashboard')
-            // Add here page to test ...
+            array('/librinfo/email/email/list'),
+            array('/librinfo/email/email/create'),
+            array('/librinfo/email/emailtemplate/list'),
+            array('/librinfo/email/emailreceipt/list'),
+            array('/librinfo/email/emaillink/list')
         );
     }
     
-    public function tryToTest()
+/*    public function tryToTest()
     {
         $client = self::createClient();
         
-        $crawler = $client->request('GET', '/admin/dashboard');
+        $crawler = $client->request('GET', '/');
 
         /* Example */
         /*
@@ -40,6 +42,6 @@ class UrlTest extends WebTestCase
             'Title',
             $crawler->filter('label')
         );
-        */
     }
+        */
 }
