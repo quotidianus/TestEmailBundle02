@@ -26,10 +26,24 @@ class SenderTest extends TestCase
      * Sets up the fixture, for example, opens a network connection.
      * This method is called before a test is executed.
      */
- /*   protected function setUp()
+    protected function setUp()
     {
-        $this->object = new Sender;
-
+    $this->manager = $this->createMock('Doctrine\ORM\EntityManager');
+    $this->tracker = $this->createMock('Librinfo\EmailBundle\Services\Tracking');
+    $this->inlineAttachmentsHandler = $this->createMock('Librinfo\EmailBundle\Services\InlineAttachments');              
+    $this->directMailer = $this->createMock('Swift_Mailer');     
+    /*
+    * todo : check if we need to mock for this same object
+    */         
+    $this->spoolMailer = $this->createMock('Swift_Mailer');              
+    
+    $this->object = new Sender(
+        $this->manager,
+        $this->tracker,
+        $this->inlineAttachmentsHandler,
+        $this->directMailer, 
+        $this->spoolMailer
+    );
     }
 
     /**
@@ -38,6 +52,7 @@ class SenderTest extends TestCase
      */
     protected function tearDown()
     {
+
     }
 
     /**
@@ -46,9 +61,9 @@ class SenderTest extends TestCase
      */
     public function testSend()
     {
-        // Remove the following lines when you implement this test.
-        $this->markTestIncomplete(
-            'This test has not been implemented yet.'
-        );
+    /*
+    * $this->assertFileExists($this->attachmentsFile)
+    */
+	
     }
 }
