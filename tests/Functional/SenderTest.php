@@ -62,6 +62,16 @@ class SenderTest extends TestCase
     public function testSend()
     {
     /*
+    * @todo find a way to launch Sender::send method with a valid paramater
+
+            $email = ;
+    $this->object->send($email);
+
+    */
+    
+    
+    
+    /*
     * $this->assertFileExists($this->attachmentsFile)
     */
 	
