@@ -8,6 +8,7 @@ namespace Librinfo\EmailBundle\tests\Functional;
 
 use PHPUnit\Framework\TestCase;
 use Librinfo\EmailBundle\Services\Sender;
+use Librinfo\EmailBundle\Entity\Email;
 
 class SenderTest extends TestCase
 {
@@ -63,17 +64,13 @@ class SenderTest extends TestCase
     {
     /*
     * @todo find a way to launch Sender::send method with a valid paramater
-
-            $email = ;
-    $this->object->send($email);
-
     */
     
-    
-    
-    /*
-    * $this->assertFileExists($this->attachmentsFile)
-    */
-	
+//    $email = new Email();
+//    $this->object->send($email);
+   
+        
+//    $this->assertFileExists($this->inlineAttachmentsHandler);
+    	
     }
 }
