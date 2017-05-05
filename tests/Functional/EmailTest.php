@@ -71,122 +71,102 @@ class EmailTest extends TestCase
 
     /**
      * @covers Librinfo\EmailBundle\Entity\Email::setFieldFrom
-     * @todo   Implement testSetFieldFrom().
      */
     public function testSetFieldFrom()
     {
-        // Remove the following lines when you implement this test.
-        $this->markTestIncomplete(
-            'This test has not been implemented yet.'
-        );
+        $email = new Email();
+        $email->setFieldFrom('toi@moi.nous');
+        $this->assertEquals('toi@moi.nous', $email->getFieldFrom());
     }
 
     /**
      * @covers Librinfo\EmailBundle\Entity\Email::getFieldFrom
-     * @todo   Implement testGetFieldFrom().
      */
     public function testGetFieldFrom()
     {
-        // Remove the following lines when you implement this test.
-        $this->markTestIncomplete(
-            'This test has not been implemented yet.'
-        );
+        $email = new Email();
+        $from = $email->getFieldFrom();
+        $this->assertEquals($from,'');
     }
 
     /**
      * @covers Librinfo\EmailBundle\Entity\Email::setFieldTo
-     * @todo   Implement testSetFieldTo().
      */
     public function testSetFieldTo()
     {
-        // Remove the following lines when you implement this test.
-        $this->markTestIncomplete(
-            'This test has not been implemented yet.'
-        );
-    }
+        $email = new Email();
+        $email->setFieldTo('moi@toi.nous');
+        $this->assertEquals('moi@toi.nous', $email->getFieldTo());
+     }
 
     /**
      * @covers Librinfo\EmailBundle\Entity\Email::getFieldTo
-     * @todo   Implement testGetFieldTo().
      */
     public function testGetFieldTo()
     {
-        // Remove the following lines when you implement this test.
-        $this->markTestIncomplete(
-            'This test has not been implemented yet.'
-        );
+        $email = new Email();
+        $to = $email->getFieldTo();
+        $this->assertEquals($to,'');
     }
 
     /**
      * @covers Librinfo\EmailBundle\Entity\Email::setFieldCc
-     * @todo   Implement testSetFieldCc().
      */
     public function testSetFieldCc()
     {
-        // Remove the following lines when you implement this test.
-        $this->markTestIncomplete(
-            'This test has not been implemented yet.'
-        );
-    }
+        $email = new Email();
+        $email->setFieldCc('moi@lui.nous');
+        $this->assertEquals('moi@lui.nous', $email->getFieldCc());
+     }
 
     /**
      * @covers Librinfo\EmailBundle\Entity\Email::getFieldCc
-     * @todo   Implement testGetFieldCc().
      */
     public function testGetFieldCc()
     {
-        // Remove the following lines when you implement this test.
-        $this->markTestIncomplete(
-            'This test has not been implemented yet.'
-        );
+        $email = new Email();
+        $tocc = $email->getFieldCc();
+        $this->assertEquals($tocc,'');
     }
 
     /**
      * @covers Librinfo\EmailBundle\Entity\Email::setFieldBcc
-     * @todo   Implement testSetFieldBcc().
      */
     public function testSetFieldBcc()
     {
-        // Remove the following lines when you implement this test.
-        $this->markTestIncomplete(
-            'This test has not been implemented yet.'
-        );
-    }
+        $email = new Email();
+        $email->setFieldBcc('moi@autre.nous');
+        $this->assertEquals('moi@autre.nous', $email->getFieldBcc());
+     }
 
     /**
      * @covers Librinfo\EmailBundle\Entity\Email::getFieldBcc
-     * @todo   Implement testGetFieldBcc().
      */
     public function testGetFieldBcc()
     {
-        // Remove the following lines when you implement this test.
-        $this->markTestIncomplete(
-            'This test has not been implemented yet.'
-        );
+        $email = new Email();
+        $tobcc = $email->getFieldBcc();
+        $this->assertEquals($tobcc,'');
     }
 
     /**
      * @covers Librinfo\EmailBundle\Entity\Email::setFieldSubject
-     * @todo   Implement testSetFieldSubject().
      */
     public function testSetFieldSubject()
     {
-        // Remove the following lines when you implement this test.
-        $this->markTestIncomplete(
-            'This test has not been implemented yet.'
-        );
-    }
+        $email = new Email();
+        $email->setFieldSubject("Sujet de l'email");
+        $this->assertEquals("Sujet de l'email", $email->getFieldSubject());
+     }
 
     /**
      * @covers Librinfo\EmailBundle\Entity\Email::getFieldSubject
-     * @todo   Implement testGetFieldSubject().
      */
     public function testGetFieldSubject()
     {
-        // Remove the following lines when you implement this test.
-        $this->markTestIncomplete(
-            'This test has not been implemented yet.'
-        );
+        $email = new Email();
+        $subject = $email->getFieldSubject();
+        $this->assertEquals($subject,'<no subject>');
     }
 
     /**
@@ -239,14 +219,12 @@ class EmailTest extends TestCase
 
     /**
      * @covers Librinfo\EmailBundle\Entity\Email::setSent
-     * @todo   Implement testSetSent().
      */
     public function testSetSent()
     {
-        // Remove the following lines when you implement this test.
-        $this->markTestIncomplete(
-            'This test has not been implemented yet.'
-        );
+        $email = new Email();
+        $email->setSent(true);
+        $this->assertEquals(true, $email->getSent());
     }
 
     /**
@@ -255,10 +233,9 @@ class EmailTest extends TestCase
      */
     public function testGetSent()
     {
-        // Remove the following lines when you implement this test.
-        $this->markTestIncomplete(
-            'This test has not been implemented yet.'
-        );
+        $email = new Email();
+        $sent = $email->getSent();
+        $this->assertEquals($sent,false);
     }
 
     /**
