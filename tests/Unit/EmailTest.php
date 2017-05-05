@@ -308,13 +308,11 @@ class EmailTest extends TestCase
 
     /**
      * @covers Librinfo\EmailBundle\Entity\Email::getIsTest
-     * @todo Is "isTest" needs to be in "__construct()" ?
      */
     public function testGetIsTest()
     {
         $istest = $this->emailtest->getIsTest();
-        $this->assertNull($istest);    
-//        $this->assertFalse($istest);
+        $this->assertFalse($istest);
     }
 
     /**
